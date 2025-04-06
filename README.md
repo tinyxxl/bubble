@@ -1,4 +1,4 @@
-# 创意气泡（Bubble Thoughts）
+# 灵感气泡（Bubble Thoughts）
 
 [![Deploy static content to Pages](https://github.com/tinyxxl/bubble/actions/workflows/static.yml/badge.svg)](https://github.com/tinyxxl/bubble/actions/workflows/static.yml)
 
@@ -23,7 +23,7 @@
 - 设计思维与方法论
 - 用户体验与用户研究
 - 产品策略与管理
-- 创新方法与创意激发
+- 创新方法与灵感激发
 - 数据分析与决策优化
 - 团队协作与沟通
 

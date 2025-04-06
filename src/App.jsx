@@ -399,7 +399,9 @@ function App() {
   return (
     <div className="app">
       <div className="logo-container">
-        <img src="/bubble/tinyxxl-logo.svg" alt="TinyXXL Logo" className="app-logo" />
+        <a href="https://tinyxxl.super.site/" target="_blank" rel="noopener noreferrer">
+          <img src="/bubble/tinyxxl-logo.svg" alt="TinyXXL Logo" className="app-logo" />
+        </a>
       </div>
       <button className="boom-button" onClick={updateBubblePositions}>
         <svg className="boom-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
