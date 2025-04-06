@@ -382,6 +382,9 @@ function App() {
 
   return (
     <div className="app">
+      <div className="logo-container">
+        <img src="/bubble/tinyxxl-logo.svg" alt="TinyXXL Logo" className="app-logo" />
+      </div>
       <button className="boom-button" onClick={updateBubblePositions}>
         Boom!
       </button>
