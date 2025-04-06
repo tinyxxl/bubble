@@ -1,5 +1,7 @@
 # 创意气泡（Bubble Thoughts）
 
+[![Deploy static content to Pages](https://github.com/tinyxxl/bubble/actions/workflows/static.yml/badge.svg)](https://github.com/tinyxxl/bubble/actions/workflows/static.yml)
+
 一个以动态气泡视觉化呈现产品思维主题的互动应用。气泡以柔和的动画方式围绕屏幕中心浮动，点击气泡可以查看详细内容。
 
 ![应用界面预览](public/preview.png)
@@ -54,6 +56,28 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## 部署到GitHub Pages
+
+该项目已配置自动部署到GitHub Pages：
+
+1. 确保你的仓库设置中启用了GitHub Pages（Settings > Pages）
+2. 在Source设置中选择"GitHub Actions"
+3. 每次推送到main分支时，工作流会自动构建并部署应用
+4. 部署完成后，应用可在 `https://<your-github-username>.github.io/bubble/` 访问
+
+手动配置步骤：
+
+1. 确保`vite.config.js`中设置了正确的base路径：
+```js
+export default defineConfig({
+  plugins: [react()],
+  base: '/bubble/', // 改为你的仓库名
+})
+```
+
+2. 在`.github/workflows`目录中添加部署工作流配置
+3. 推送更改到GitHub仓库
 
 ## 自定义主题
 
