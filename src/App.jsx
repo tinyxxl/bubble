@@ -325,6 +325,22 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedBubble, setSelectedBubble] = useState(null);
 
+  // 添加viewport meta标签确保移动设备正确显示
+  useEffect(() => {
+    const viewportMeta = document.createElement('meta');
+    viewportMeta.name = 'viewport';
+    viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(viewportMeta);
+
+    // 清理函数
+    return () => {
+      const existingMeta = document.querySelector('meta[name="viewport"]');
+      if (existingMeta && existingMeta.parentNode === document.head) {
+        document.head.removeChild(existingMeta);
+      }
+    };
+  }, []);
+
   const updateBubblePositions = useCallback(() => {
     // 选择新的随机气泡，固定为9个
     const randomSelectedBubbles = getRandomBubbles(bubbleData.bubbles, 9);
@@ -386,6 +402,9 @@ function App() {
         <img src="/bubble/tinyxxl-logo.svg" alt="TinyXXL Logo" className="app-logo" />
       </div>
       <button className="boom-button" onClick={updateBubblePositions}>
+        <svg className="boom-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
         Boom!
       </button>
       <div className="bubble-container">

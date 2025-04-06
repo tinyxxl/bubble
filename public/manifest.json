@@ -1,0 +1,17 @@
+{
+  "name": "创意气泡",
+  "short_name": "Bubble",
+  "icons": [
+    {
+      "src": "/bubble/tinyxxl-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/bubble/",
+  "scope": "/bubble/"
+} 

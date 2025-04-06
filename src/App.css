@@ -259,6 +259,26 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.boom-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .boom-button:hover {
@@ -266,9 +286,82 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.boom-button:hover .boom-icon {
+  animation-duration: 1s;
+}
+
 .boom-button:active {
   transform: translateX(-50%) translateY(0);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 移动设备适配 */
+@media screen and (max-width: 768px) {
+  .boom-button {
+    bottom: 20px;
+    padding: 12px 24px;
+    font-size: 14px;
+    width: auto;
+    min-width: 120px;
+    max-width: 90%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .popup-content {
+    width: 95%;
+    max-height: 80vh;
+  }
+  
+  .popup-header h2 {
+    font-size: 1.3rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .bubble {
+    /* 在移动设备上增强点击区域 */
+    touch-action: manipulation;
+  }
+  
+  .bubble > span {
+    /* 确保文字在小气泡中仍然可读 */
+    font-size: 0.9em;
+    word-break: break-word;
+  }
+}
+
+/* 超小屏幕设备适配 */
+@media screen and (max-width: 320px) {
+  .boom-button {
+    bottom: 15px;
+    padding: 10px 15px;
+    font-size: 13px;
+    min-width: 100px;
+    max-width: 85%;
+  }
+  
+  .boom-button:hover {
+    transform: translateX(-50%) translateY(-2px);
+  }
+  
+  .boom-button:active {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .popup-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .popup-body p {
+    font-size: 0.9rem;
+  }
+  
+  .app-logo {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /* 添加弹窗样式 */
